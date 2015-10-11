@@ -1,6 +1,19 @@
 // create an array 4 x 4 //
 
-var $greenRow = "G G G G G G G G".split(" ");
+
+var $greenRow =
+
+`<span class="greenText">G</span> .
+<span class="greenText">G</span> .
+<span class="greenText">G</span> .
+<span class="greenText">G</span> .
+<span class="greenText">G</span> .
+<span class="greenText">G</span> .
+<span class="greenText">G</span> .
+<span class="greenText">G</span>
+`.split(".");
+
+
 var $myGame = [
   [],
   [],
@@ -13,7 +26,7 @@ var $myGame = [
 ];
 
 function turnBlack(x, y) {
-  $myGame[y][x] = "B";
+  $myGame[y][x] = "<span class='blackText'>B</span>";
   var message = ("<p>Changing " + x + ":" + y + " to Black</p>");
   var underline = (("<p>" + Array(message.length).join("-") + ("</p>")));
   $(".game").append(underline + message + underline);
@@ -21,8 +34,8 @@ function turnBlack(x, y) {
 }
 
 function turnWhite(x, y) {
-  $myGame[y][x] = "W";
-  var message = ("<p>Changing " + x + ":" + y + " to White</p>")
+  $myGame[y][x] = "<span class='whiteText'>W</span>";
+  var message = ("<p>Changing " + x + ":" + y + " to White</p>");
   var underline = (("<p>" + Array(message.length).join("-") + ("</p>")));
   $(".game").append(underline + message + underline);
 }
@@ -32,6 +45,7 @@ function setGreen() {
     $myGame[i] = $greenRow.slice();
     // console.log($myGame[i]);
   });
+  // console.log($myGame);
 }
 
 
@@ -45,31 +59,67 @@ function writeGreen() {
 }
 
 function printRow() {
-  var htmlCell = "";
+  var htmlText = "";
   var htmlString = "";
   var trString, endtrString;
+  var trString = "<tr>";
+  var endtrString = "</tr>";
+   htmlText += trString;
+
   $.each($myGame, function(i, row) {
-    // console.log(i);
-    // console.log(row);
+
     $row = $(row);
+
       $.each($row, function(j, value) {
-        // console.log($row);
+
         var text = "<td> " + value + " </td>";
-        // console.log(text);
-        htmlCell += text;
-        // console.log(htmlCell);
+
+        htmlText += text;
+        // console.log(htmlText);
       });
-      trString = "<tr>";
-      endtrString = "</tr>";
-      htmlCell = trString + htmlCell + endtrString;
-      htmlString = htmlCell;
-      // console.log(htmlString);
+
+        htmlText +=  endtrString;
+        // console.log(htmlText);
+
   });
+
+  htmlString = htmlText;
   $(".inHere").append(htmlString);
+  // console.log(htmlString);
+
 };
 
+
+// function printRow() {
+//   var htmlCell = "";
+//   var htmlString = "";
+//   var trString, endtrString;
+//   var trString = "<tr>";
+//   var endtrString = "</tr>";
+//   $.each($myGame, function(i, row) {
+//     $row = $(row);
+//       $.each($row, function(j, value) {
+//
+//         var text = "<td> " + value + " </td>";
+//         htmlCell += text;
+//       });
+//       htmlCell = trString + htmlCell + endtrString;
+//       htmlString = htmlCell;
+//   });
+//   // $(".inHere").append(htmlString);
+// };
+//
+
+
+function setColors() {
+  $("td:contains('W')").addClass("whiteBox");
+  $("td:contains('G')").addClass("greenBox");
+  $("td:contains('B')").addClass("blackBox");
+}
+
 setGreen();
-writeGreen();
+
+// writeGreen();
 turnBlack(3, 3);
 turnBlack(4, 4);
 
@@ -77,11 +127,13 @@ turnBlack(4, 4);
 turnWhite(4, 3);
 turnWhite(3, 4);
 
-writeGreen();
+// writeGreen();
 
 printRow();
 
+setColors();
 
-$("td:contains('W')").css("background-color", "white").css("color", "white");
-$("td:contains('B')").css("background-color", "black").css("color", "black");
-$("td:contains('G')").css("background-color", "green").css("color", "green");
+//
+// $("td:contains('W')").css("background-color", "white").css("color", "white");
+// $("td:contains('B')").css("background-color", "black").css("color", "black");
+// $("td:contains('G')").css("background-color", "green").css("color", "green");

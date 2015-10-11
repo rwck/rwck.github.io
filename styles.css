@@ -32,9 +32,39 @@ td {
 
 table {
   border-spacing: 15px;
+  max-width: 60%;
+  margin: auto;
 }
 
 
 td .pressed {
   box-shadow: none;
+}
+
+.greenBox {
+  background-color: green;
+  color: green;
+  /*opacity: 0.7;*/
+}
+
+.blackText {
+  opacity: 0;
+}
+
+.whiteText {
+  opacity: 0;
+}
+
+.greenText {
+  opacity: 0;
+}
+
+.blackBox {
+  background-color: black;
+  color: black;
+}
+
+.whiteBox {
+  background-color: white;
+  color: white;
 }
