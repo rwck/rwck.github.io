@@ -1,10 +1,10 @@
 # Don's named files
 
-*.bmpr
-*private*
+IGNORE/
 
 
 
+###################
 
 # Compiled source #
 ###################
