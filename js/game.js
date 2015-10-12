@@ -1,4 +1,11 @@
 // create a a square playing grid of objects <squares> squared
+function init() {
+  createGridObject(8);
+  kaboom();
+}
+
+
+
 function createGridObject(squares) { // this function works nicely
   var hash = ""
   var hashArray = [];
@@ -21,15 +28,10 @@ var testObject = {};
 function kaboom() { // this function works nicely
   for (var i = 0; i < $hashArray.length; i++) {
     var x = $hashArray[i][0];
-    // console.log(x);
     var y = $hashArray[i][$hashArray.length-1];
-    // console.log("Array length is " + $hashArray.length);
-    // console.log("Array " + i + " is " + $hashArray[i]);
-    // console.log("x value is " +  $hashArray[i][0]);
-    // console.log("y value is " + $hashArray[i][$hashArray[i].length-1]);
     var y = $hashArray[i][$hashArray[i].length-1];
-    testObject[$hashArray[i]] = new basicPlayingSquare(x, y);
-
+    var z = $hashArray.length;
+    testObject[$hashArray[i]] = new basicPlayingSquare(x, y, z);
   }
 }
 
@@ -47,45 +49,60 @@ function test() {
   testDownRightNeighbours();
 }
 
+var booboo = [];
+
 function testRightNeighbours() {
   $.each($hashArray, function(i, l) {
-    // console.log(i);
-    // console.log(l);
-    // console.log("i value is " + i + " l value is " + l);
-    if (testObject[l].testRight() === undefined) {
-      console.log("Found the right hand edge of the known universe!!! + It's at " + $hashArray[i]);
-    } else {
-      console.log("Good stuff! There's a piece next to me on the right!");
+    try {
+      testObject[l].testRight();
+    }
+    catch(err) {
+      console.log(err);
+      if ($.inArray(l, booboo) < 0) {
+        booboo.push(l);
+      }
     }
   });
 }
 
 function testLeftNeighbours() {
   $.each($hashArray, function(i, l) {
-    if (testObject[l].testLeft() === undefined) {
-      console.log("Found the left hand edge of the known universe!!! + It's at " + $hashArray[i]);
-    } else {
-      console.log("Good stuff! There's a piece next to me on the left!");
+    try {
+      testObject[l].testLeft();
+    }
+    catch(err) {
+      console.log(err);
+      if ($.inArray(l, booboo) < 0) {
+        booboo.push(l);
+      }
     }
   });
 }
 
 function testDownNeighbours() {
   $.each($hashArray, function(i, l) {
-    if (testObject[l].testDown() === undefined) {
-      console.log("Found the uppermost edge of the known universe!!! It's at " + $hashArray[i]);
-    } else {
-      console.log("Good stuff! There's a piece above me!");
+    try {
+      testObject[l].testDown();
+    }
+    catch(err) {
+      console.log(err);
+      if ($.inArray(l, booboo) < 0) {
+        booboo.push(l);
+      }
     }
   });
 }
 
 function testUpNeighbours() {
   $.each($hashArray, function(i, l) {
-    if (testObject[l].testUp() === undefined) {
-      console.log("Found the bottom edge of the known universe!!! It's at " + $hashArray[i]);
-    } else {
-      console.log("Good stuff! There's a piece below me!");
+    try {
+      testObject[l].testUp();
+    }
+    catch(err) {
+      console.log(err);
+      if ($.inArray(l, booboo) < 0) {
+        booboo.push(l);
+      }
     }
   });
 }
@@ -94,52 +111,52 @@ var noDiagonalMove = []
 
 function testUpRightNeighbours() {
   $.each($hashArray, function(i, l) {
-    if (testObject[l].testUpRight() === undefined) {
-      console.log("Found the top right edge of the known universe!!! It's at " + $hashArray[i]);
-      if (!$.inArray($hashArray[i]), noDiagonalMove) {
-        noDiagonalMove.push($hashArray[i]);
+    try {
+      testObject[l].testUpRight();
+    } catch (err) {
+      console.log(err);
+      if ($.inArray(l, booboo) < 0) {
+        booboo.push(l);
       }
-    } else {
-      console.log("Good stuff! There's a piece above me and to the right!");
     }
   });
 }
 
 function testDownRightNeighbours() {
   $.each($hashArray, function(i, l) {
-    if (testObject[l].testDownRight() === undefined) {
-      console.log("Found the bottom right edge of the known universe!!! It's at " + $hashArray[i]);
-      if (!$.inArray($hashArray[i]), noDiagonalMove) {
-        noDiagonalMove.push($hashArray[i]);
+    try {
+      testObject[l].testDownRight();
+    } catch (err) {
+      console.log(err);
+      if ($.inArray(l, booboo) < 0) {
+        booboo.push(l);
       }
-    } else {
-      console.log("Good stuff! There's a piece below me and to the right!");
     }
   });
 }
 
 function testUpLeftNeighbours() {
   $.each($hashArray, function(i, l) {
-    if (testObject[l].testUpLeft() === undefined) {
-      console.log("Found the top left edge of the known universe!!! It's at " + $hashArray[i]);
-      if (!$.inArray($hashArray[i]), noDiagonalMove) {
-        noDiagonalMove.push($hashArray[i]);
+    try {
+      testObject[l].testUpLeft();
+    } catch (err) {
+      console.log(err);
+      if ($.inArray(l, booboo) < 0) {
+        booboo.push(l);
       }
-    } else {
-      console.log("Good stuff! There's a piece above me and to the left!");
     }
   });
 }
 
 function testDownLeftNeighbours() {
   $.each($hashArray, function(i, l) {
-    if (testObject[l].testDownLeft() === undefined) {
-      console.log("Found the bottom left edge of the known universe!!! It's at " + $hashArray[i]);
-      if (!$.inArray($hashArray[i]), noDiagonalMove) {
-        noDiagonalMove.push($hashArray[i]);
+    try {
+      testObject[l].testDownLeft();
+    } catch (err) {
+      console.log(err);
+      if ($.inArray(l, booboo) < 0) {
+        booboo.push(l);
       }
-    } else {
-      console.log("Good stuff! There's a piece below me and to the left!");
     }
   });
 }

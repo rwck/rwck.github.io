@@ -1,6 +1,8 @@
 // creating objects
 
-function basicPlayingSquare(x, y) {
+function basicPlayingSquare(x, y, z) {
+  this.square = z;
+  this.x = x;
   this.hash = x + "_" + y;
   this.x_coordinate = x;
   this.y_coordinate = y;
@@ -8,7 +10,29 @@ function basicPlayingSquare(x, y) {
   this.permittedMove = false;
   this.locked = false;
   this.borderPiece = false;
-  // this function returns the value of the object to the right of this one
+  this.newRow = "";
+  this.endOfRow = "";
+  // if (parseInt(this.x) + 1 === Math.sqrt(this.square)) {
+  //   this.endOfRow += `</tr>`;
+  // };
+  this.valueX = parseInt(this.x) + 1;
+  this.testV = Math.sqrt(this.square);
+  // if (parseInt(this.x) === 0) {
+  //   this.newRow += `<tr>`;
+  // };
+  this.HTMLsnippet =  [
+                      `<td id="`,
+                      this.hash,
+                      `">`,
+                      `<span class="cell">X</span></td>`,
+                      
+                    ]
+
+   // this function returns the value of the object to the right of this one
+  //  if (parseInt(x) === (Math.sqrt(Object.keys(testObject).length) - 1)) {
+  //
+  //  };
+  //
   this.testRight = function() { // this function works nicely
     testRight(x, y);
   };
