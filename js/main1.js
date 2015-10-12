@@ -40,19 +40,12 @@ function turnWhite(x, y) {
   $(".game").append(underline + message + underline);
 }
 
-//
-// function setUpGreen() {
-//   $.each(testObject, function(key, value) {
-//     console.log(value);
-//   });
-// }
 
 function setUpGreen() {
   $.each(testObject, function(key, value) {
     console.log(value.colour);
   });
 }
-
 
 function testing() {
   $.each(testObject, function(key, value) {
@@ -63,66 +56,23 @@ function testing() {
   });
 }
 
-
-//     $.each(value), function(i, j) {
-//       console.log(i, j);
-//     }});
-// }
-
 function drawGrid() {
   var openTable = `<table>`;
   var closeTable = `</table>`;
   var htmlString = "";
-  var newRow = "";
-  var endOfRow = "";
-  var bigStringArray = []
-  $.each(testObject, function(key, value) {
-    if (parseInt(value.x) === 0) {
-      value.HTMLsnippet.unshift("<tr>");
-    }
-    // console.log(newRow);
-    if (parseInt(value.x) + 1 === Math.sqrt(value.square)) {
-      value.HTMLsnippet.push("</tr>");
-    }
-    bigStringArray.push(value.HTMLsnippet);
-    console.log(bigStringArray);
-    // htmlString += value.HTMLsnippet.join("");
-    // console.log(htmlString);
-
-    // blob += newRow + value.HTMLsnippet + endOfRow;
-    // console.log(blob);
-    // console.log(value.HTMLsnippet);
-    // // htmlString += newRow + value.HTMLsnippet + endOfRow;
-    // // htmlString += endOfRow;
-    // //  + value.HTMLsnippet;
-    // console.log(htmlString);
-    // // console.log(htmlString);
+  $.each($hashArray, function(i, cell) {
+    htmlString += testObject[cell].HTMLsnippet
   });
-  // console.log(htmlString);
-
   var myHtml = openTable + htmlString + closeTable;
-  console.log(bigStringArray);
-  var bigStringString = "<table> " + bigStringArray.join("") + "</table";
-  console.log(bigStringString);
-
-
-  // console.log(myHtml);
-  $(".injectTable").html(bigStringString);
-  // console.log(myHtml);
+  console.log(myHtml);
+  $(".injectTable").html(myHtml);
 }
 
-
-
-
-// Object.keys(obj).length
-
-
+// NOW OBSOLEte
 function setGreen() {
   $.each($myGame, function(i, l) {
     $myGame[i] = $greenRow.slice();
-    // console.log($myGame[i]);
   });
-  // console.log($myGame);
 }
 
 

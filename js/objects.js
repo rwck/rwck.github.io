@@ -12,21 +12,28 @@ function basicPlayingSquare(x, y, z) {
   this.borderPiece = false;
   this.newRow = "";
   this.endOfRow = "";
-  // if (parseInt(this.x) + 1 === Math.sqrt(this.square)) {
-  //   this.endOfRow += `</tr>`;
-  // };
+  if (parseInt(this.x) + 1 === Math.sqrt(this.square)) {
+    this.endOfRow += `</tr>`;
+  };
   this.valueX = parseInt(this.x) + 1;
   this.testV = Math.sqrt(this.square);
-  // if (parseInt(this.x) === 0) {
-  //   this.newRow += `<tr>`;
-  // };
-  this.HTMLsnippet =  [
-                      `<td id="`,
-                      this.hash,
-                      `">`,
-                      `<span class="cell">X</span></td>`,
-                      
-                    ]
+  if (parseInt(this.x) === 0) {
+    this.newRow += `<tr>`;
+  };
+  this.HTMLsnippet =  (this.newRow +
+                      `<td id="` +
+                      this.hash +
+                      `">` +
+                      `<span class="cell">X</span></td>`+
+                      this.endOfRow);
+
+  // [
+  //                     `<td id="`,
+  //                     this.hash,
+  //                     `">`,
+  //                     `<span class="cell">X</span></td>`,
+  //
+  //                   ]
 
    // this function returns the value of the object to the right of this one
   //  if (parseInt(x) === (Math.sqrt(Object.keys(testObject).length) - 1)) {

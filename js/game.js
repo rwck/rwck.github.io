@@ -9,15 +9,28 @@ function init() {
 function createGridObject(squares) { // this function works nicely
   var hash = ""
   var hashArray = [];
-  for (var x = 0; x < squares; x++) {
-    var x_coord = x.toString();
-    for (var y = 0; y < squares; y ++) {
-      var y_coord = y.toString();
+  for (var y = 0; y < squares; y++) {
+    var y_coord = y.toString();
+    for (var x = 0; x < squares; x++) {
+      var x_coord = x.toString();
       hash = x_coord + "_" + y_coord;
-      // console.log(hash);
       hashArray.push(hash);
     }
   }
+
+
+
+  // for (var x = 0; x < squares; x++) {
+  //   var x_coord = x.toString();
+  //   for (var y = 0; y < squares; y ++) {
+  //     var y_coord = y.toString();
+  //     hash = x_coord + "_" + y_coord;
+  //     // console.log(hash);
+  //     hashArray.push(hash);
+  //   }
+  // }
+
+
   // console.log(hashArray)
   $hashArray = $(hashArray);
   return $hashArray;
