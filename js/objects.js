@@ -10,6 +10,7 @@ function basicPlayingSquare(x, y, z) {
   this.permittedMove = false;
   this.locked = false;
   this.borderPiece = false;
+  this.javaScript = `<script>$.click(alert("You're clicking on a cell"))</script>`;
   this.newRow = "";
   this.endOfRow = "";
   if (parseInt(this.x) + 1 === Math.sqrt(this.square)) {
@@ -24,22 +25,13 @@ function basicPlayingSquare(x, y, z) {
                       `<td id="` +
                       this.hash +
                       `">` +
-                      `<span class="cell">X</span></td>`+
+                      `<span class="cell" ` +
+                      // this.javaScript +
+                      `>` +
+                      `X</span></td>`+
                       this.endOfRow);
 
-  // [
-  //                     `<td id="`,
-  //                     this.hash,
-  //                     `">`,
-  //                     `<span class="cell">X</span></td>`,
-  //
-  //                   ]
 
-   // this function returns the value of the object to the right of this one
-  //  if (parseInt(x) === (Math.sqrt(Object.keys(testObject).length) - 1)) {
-  //
-  //  };
-  //
   this.testRight = function() { // this function works nicely
     testRight(x, y);
   };
