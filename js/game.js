@@ -1,6 +1,6 @@
 // create a a square playing grid of objects <squares> squared
 function init() {
-  createGridObject(4);
+  createGridObject(8);
   kaboom();
   drawGrid();
 }

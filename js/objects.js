@@ -1,14 +1,6 @@
 // creating objects
 
-// directions
-var north = [0, -1]
-var south = [0, 1]
-var east = [1, 0]
-var west = [-1, 0]
-var northwest = [-1, -1]
-var northeast = [1, -1]
-var southwest = [-1, 1]
-var southeast = [1, 1]
+
 
 function basicPlayingSquare(x, y, z) {
   this.square = z;
