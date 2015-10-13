@@ -1,28 +1,56 @@
-function clickToggleSelector() {
+// function clickToggleSelector() {
+//   if (whoseTurn === playerBlack) {
+//     clickToggleBlack();
+//   } else if (whoseTurn === playerWhite) {
+//     clickToggleWhite();
+//   }
+//   // playerToggle();
+// }
+
+
+function setClickers() {
+  $("td").click(function() {
+    // CLICK();
+    var myID = this.id;
+    CLICK(myID);
+  });
+}
+
+
+function CLICK(myID) {
   if (whoseTurn === playerBlack) {
-    clickToggleBlack()
+    blackToggle(myID);
   } else if (whoseTurn === playerWhite) {
-    clickToggleWhite();
+    whiteToggle(myID);
   }
+  playerToggle();
+  console.log(whoseTurn);
 }
 
 
 function clickToggleBlack() {
+  $("td").off();
   $("td").click(function() {
     // alert("Hello. You've clicked me. My ID is: " + this.id);
     blackToggle(this.id);
+    // playerToggle();
+    console.log("Kabooom - changed to player: " + whoseTurn);
     // return this.(
   });
 }
 
 function clickToggleWhite() {
+  $("td").off();
   $("td").click(function() {
     // alert("Hello. You've clicked me. My ID is: " + this.id);
     whiteToggle(this.id);
+    // playerToggle();
+    console.log("Kabooom - changed to player: " + whoseTurn);
   });
 }
 
 function clickToggleGreen() {
+  $("td").off();
   $("td").click(function() {
     // alert("Hello. You've clicked me. My ID is: " + this.id);
     greenToggle(this.id);
@@ -51,21 +79,8 @@ function whereAmI(ID) {
   var myCoords = [testObject[ID].x, testObject[ID].y];
   alert(myCoords);
 }
-
-console.log(whoseTurn);
-console.log(playerBlack);
-console.log(whoseTurn === playerBlack);
-console.log(playerWhite);
-
-
-function playerClickSelector() {
-  if (whoseTurn === playerBlack) {
-    clickToggleWhite();
-  } else if (whoseTurn === playerBlack) {
-    clickToggleBlack();
-  }
-}
-
-
-
-// $("td").append(`$.click(alert("You're clicking on a cell" + this`)
+//
+// console.log(whoseTurn);
+// console.log(playerBlack);
+// console.log(whoseTurn === playerBlack);
+// console.log(playerWhite);

@@ -64,7 +64,7 @@ function drawGrid() {
     htmlString += testObject[cell].HTMLsnippet
   });
   var myHtml = openTable + htmlString + closeTable;
-  console.log(myHtml);
+  // console.log(myHtml);
   $(".injectTable").html(myHtml);
 }
 

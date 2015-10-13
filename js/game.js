@@ -1,10 +1,9 @@
 // create a a square playing grid of objects <squares> squared
 function init() {
-  createGridObject(8);
+  createGridObject(4);
   kaboom();
   drawGrid();
 }
-
 
 function createGridObject(squares) { // this function works nicely
   var hash = ""
