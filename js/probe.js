@@ -1,5 +1,32 @@
 // basic test functions
 
+function testEmpty(x, y) {
+  var testHash = (parseInt(x) + "_" + parseInt(y));
+  if (testObject[testHash].colour !== "green") {
+    throw "FATAL: square is not empty";
+  }
+}
+
+
+function cellAt(x, y) {
+  return parseInt(x) + "_" + parseInt(y);
+}
+
+
+function testAllSquaresforEmpty() {
+  $.each(Object.keys(testObject), function(i, k) {
+    var testX =
+
+    testEmpty()
+    console.log(testObject[k].x, testObject[k].y);
+
+
+
+    // testEmpty(testObject[k].x, testObject[k].y)
+})};
+
+
+
 function testRight(x, y) {
   var testHash = (parseInt(x) + 1) + "_" + y;
   if (testObject[testHash] === undefined) {
@@ -70,6 +97,88 @@ function testDownLeft(x, y) {
   }
   console.log(testObject[testHash]);
   return testObject[testHash];
+}
+
+
+// var output = ""
+// try {
+//   testUp(x, y);
+// } catch(err) {
+//   output += err;
+// }
+// try {
+//   testDown(x, y);
+// } catch (err) {
+//   output += err;
+// }
+// try
+// // testLeft(x, y);
+// // testRight(x, y);
+// // testUpLeft(x, y);
+// // testUpRight(x, y);
+// // testDownLeft(x, y);
+// // testDownRight(x, y);
+// console.log(output);
+
+
+function fullSweep(x, y) {
+  var errorTally = 0;
+  var output = ""
+  try {
+    testUp(x, y);
+  } catch(error) {
+    output += error;
+    errorTally ++;
+    }
+  try {
+    testDown(x, y);
+  } catch(error) {
+    output += error;
+    errorTally ++;
+    }
+  try {
+    testLeft(x, y);
+  } catch(error) {
+    output += error;
+    errorTally ++;
+  }
+  try {
+    testRight(x, y);
+  } catch(error) {
+    output += error;
+    errorTally ++;
+  }
+  try {
+    testUpLeft(x, y);
+  } catch(error) {
+    output += error;
+    errorTally ++;
+  }
+  try {
+    testUpRight(x, y);
+  } catch(error) {
+    output += error;
+    errorTally ++;
+  }
+  try {
+    testDownLeft(x, y);
+  } catch(error) {
+    output += error;
+    errorTally ++;
+  }
+  try {
+    testDownRight(x, y);
+  } catch(error) {
+    output += error;
+    errorTally ++;
+  }
+  try {
+  } catch(error) {
+    output += error;
+    errorTally ++;
+  }
+  console.log(output);
+  console.log(errorTally);
 }
 
 var doodoo = [];
