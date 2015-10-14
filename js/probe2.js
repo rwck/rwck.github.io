@@ -49,7 +49,7 @@ function testColourOfNorth(x, y, direction) {
   var startingID = (testObject[cellAt(x, y)].hash);
   objectProbed.IDS = []
   console.log(objectProbed);
-  objectProbed.IDS.push([startingID, startingColour]);
+  // objectProbed.IDS.push([startingID, startingColour]);
   console.log(objectProbed);
 
   rowProbed.push(startingColour);
@@ -60,45 +60,41 @@ function testColourOfNorth(x, y, direction) {
   for (var i = 0; i < rowLength; i++) {
 
     nextCoords = [a, b];
+    console.log("A is " + a + " B is " + b);
 
-    var nextCoords = addArrayItems([a, b], direction);
+    // var nextCoords = addArrayItems([a, b], direction);
     console.log(nextCoords);
     // var
     // rowProbed.push(startingColour);
 
     console.log("x is " + x);
     console.log("y is " + y);
+    var hashAandB = cellAt(a, b);
     console.log("Doodie is : " + direction);
     console.log(typeof(doodie));
-    var bloob = addArrayItems([a, b], direction);
+    var updatedAandB = addArrayItems([a, b], direction);
     console.log(direction);
-    console.log("Bloob is " + bloob);
-    console.log("next coordinates are ") + nextCoords;
-    // var a = nextCoords[0];
-    // console.log(x);
-    // console.log(y);
-    // var b = nextCoords[1];
-    var boo = cellAt(a, b);
-    console.log("this is boo value " + boo);
-    // console.log(boo);
+    // console.log("Bloob is " + bloob);
+    console.log("next coordinates are " + updatedAandB);
+
+
+    console.log("the new hash value is " + updatedAandB);
+
 
     try {
-      console.log(testObject[boo].colour);
-      var colourToPush = testObject[boo].colour;
-      var IDtoPush = testObject[boo].hash;
-      rowProbed.push(colourToPush);
-      objectProbed.IDS.push[IDtoPush, colourToPush];
-      console.log(objectProbed.IDS);
+      console.log(testObject[hashAandB].colour);
+      var colourToPush = testObject[hashAandB].colour;
+      var IDtoPush = testObject[hashAandB].hash;
+      objectProbed.IDS.push([IDtoPush, colourToPush]);
+      console.log("ARRay is currently: " + objectProbed.IDS);
       console.log("Next coordinates are " + a +  " and " + b);
   } catch (error) {
   }
+   a = updatedAandB[0];
+   b = updatedAandB[1];
    var kabook = objectProbed;
-   a = bloob[0];
-   b = bloob[1];
-  }
-  var kabook = objectProbed;
+   console.log(objectProbed);
 
-  // return rowProbed;
-  // var kabook = objectProbed;
+  }
   return kabook;
 }
