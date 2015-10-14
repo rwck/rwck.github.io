@@ -1,7 +1,5 @@
 // creating objects
 
-
-
 function basicPlayingSquare(x, y, z) {
   this.square = z;
   this.x = x;
@@ -33,7 +31,6 @@ function basicPlayingSquare(x, y, z) {
                       `>` +
                       `X</span></td>`+
                       this.endOfRow);
-
 
   this.testRight = function() { // this function works nicely
     testRight(x, y);

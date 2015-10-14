@@ -1,6 +1,6 @@
 
 var kabook;
-var player;
+var player = "black";
 
 function testwhiteToggle() {
   whiteToggle(cellAt(6, 1));
@@ -9,22 +9,22 @@ function testwhiteToggle() {
   blackToggle(cellAt(7, 0));
 }
 
-function yaroo() {
-player = "black";
-kabook = testColourOfNorth(2, 5, northeast);
-  if (_.first(kabook) === "green") {
-    console.log("BOOP");
-    console.log(kabook);
-    console.log("Player is: " + player);
-    console.log("First item is: " + _.first(kabook));
-    return true;
-  } else {
-    console.log(kabook);
-    console.log("Player is: " + player);
-    console.log("First item is " + _.first(kabook));
-    return false;
-  }
-}
+// function yaroo() {
+// player = "black";
+// kabook = testColourOfNorth(2, 5, northeast);
+//   if (_.first(kabook) === "green") {
+//     console.log("BOOP");
+//     console.log(kabook);
+//     console.log("Player is: " + player);
+//     console.log("First item is: " + _.first(kabook));
+//     return true;
+//   } else {
+//     console.log(kabook);
+//     console.log("Player is: " + player);
+//     console.log("First item is " + _.first(kabook));
+//     return false;
+//   }
+// }
 
 function messages() {
   if (_.first(kabook) === player) {
@@ -50,15 +50,15 @@ function messages() {
 }
 
 
-function updateRowArray() {
-  kabook = testColourOfNorth(2, 5, northeast);
+function updateRowArray(x, y, direction) {
+  kabook = testColourOfNorth(x, y, direction);
 }
 
 
-function checkRowContents() {
-  updateRowArray();
+function checkRowContents(x, y, direction) {
+  updateRowArray(x, y, direction);
   var nextPlayerCell = _.indexOf(kabook, player);
-  yaroo();
+  // yaroo();
   console.log(kabook);
   var clippedArray = _.initial(kabook, kabook.length - nextPlayerCell);
     console.log(clippedArray);
@@ -75,11 +75,11 @@ function checkRowContents() {
   return(arrayForChecking);
   // if $.each(arrayForChecking) === "white";
   // GOT UP TO HERE - NEXT THING IS TO CHECK ALL ELEMENTS IN CHECKIGN ARRAY ARE THE SAME AND OPPOSITE OF PLAYER. IF SO, JOLLY GOOD. FLIP THEM.
+  
 }
 
 function mini() {
   testwhiteToggle();
-  yaroo();
   kabook;
   messages();
 }

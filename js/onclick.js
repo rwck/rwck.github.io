@@ -16,7 +16,6 @@ function setClickers() {
   });
 }
 
-
 function CLICK(myID) {
   if (whoseTurn === playerBlack) {
     blackToggle(myID);
@@ -67,12 +66,13 @@ var whoseTurn = playerBlack;
 function playerToggle() {
   if (whoseTurn === playerBlack) {
     whoseTurn = playerWhite;
+    $(".currentPlayerIndicator").css('background-color', 'white');
   } else if (whoseTurn === playerWhite) {
       whoseTurn = playerBlack;
+      $(".currentPlayerIndicator").css('background-color', 'black');
   }
   return whoseTurn;
 }
-
 
 function whereAmI(ID) {
   var myID = ID
