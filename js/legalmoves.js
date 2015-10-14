@@ -13,22 +13,6 @@ function testwhiteToggle() {
   // whiteToggle(cellAt(7, 0));
 }
 
-// function yaroo() {
-// player = "black";
-// kabook = testColourOfNorth(2, 5, northeast);
-//   if (_.first(kabook) === "green") {
-//     console.log("BOOP");
-//     console.log(kabook);
-//     console.log("Player is: " + player);
-//     console.log("First item is: " + _.first(kabook));
-//     return true;
-//   } else {
-//     console.log(kabook);
-//     console.log("Player is: " + player);
-//     console.log("First item is " + _.first(kabook));
-//     return false;
-//   }
-// }
 
 function messages() {
   if (_.first(kabook.IDS)[1] === player) {
@@ -99,21 +83,12 @@ function checkRowContents(x, y, direction) {
   // return(arrayForChecking);
 
 
-
-
-
-  // if $.each(arrayForChecking) === "white";
-  // GOT UP TO HERE - NEXT THING IS TO CHECK ALL ELEMENTS IN CHECKIGN ARRAY ARE THE SAME AND OPPOSITE OF PLAYER. IF SO, JOLLY GOOD. FLIP THEM.
-
 }
 
 function mini() {
   testwhiteToggle();
   checkRowContents(2, 5, northeast);
-
-
   kabook;
-
   messages();
 }
 
@@ -133,11 +108,3 @@ function finalValidationCheck(array, opposite) {
     return false;
   }
 }
-
-
-
-// underscorejs functoins
-
-// _.rest(array, [index])
-// _.initial(array, [n])
-// _.last(array, [n])

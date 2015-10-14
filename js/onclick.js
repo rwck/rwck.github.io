@@ -12,13 +12,56 @@ function setClickers() {
   $("td").click(function() {
     // CLICK();
     var myID = this.id;
-    CLICK(myID);
+    alert(myID);
+    clickTestSquare(myID);
   });
 }
+
+// if (clickTestSquare(myID)) {
+  // CLICK(myID);
+
+
+
+function dood(id) {
+  var x = parseInt(testObject[id]["x"]);// [x];
+  var y = parseInt(testObject[id]["y"]);
+
+}
+
+
+//
+// testColourOfNorth()
+
+
+
+
+
+function clickTestSquare(id) {
+  var x = parseInt(testObject[id]["x"]);
+  var y = parseInt(testObject[id]["y"]);
+  testColourOfNorth(x, y, north);
+  testColourOfNorth(x, y, south);
+  testColourOfNorth(x, y, east);
+  testColourOfNorth(x, y, west);
+  testColourOfNorth(x, y, northeast);
+  testColourOfNorth(x, y, northwest);
+  testColourOfNorth(x, y, southeast);
+  testColourOfNorth(x, y, southwest);
+}
+
+
+// for (var i = 0; i < arrayOfDirections.length; i++) {
+//     testColourOfNorth(x, y, arrayOfDirections[i]);
+
+
+// _.each(arrayOfDirections, function(direction) {
+  // testColourOfNorth(x, y, direction)
+
 
 function CLICK(myID) {
   if (whoseTurn === playerBlack) {
     blackToggle(myID);
+    console.log(myID);
   } else if (whoseTurn === playerWhite) {
     whiteToggle(myID);
   }
