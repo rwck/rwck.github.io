@@ -21,13 +21,11 @@ body {
 
 .title {
   color: f9faf9;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.50);
-  width: 20%;
+  width: 30%;
   margin: 10px auto;
-  background-color: #f9faf9
-
-
+  background-color: #f9faf9;
 }
 
 h1 {
@@ -40,7 +38,7 @@ h1 {
   width: 60vw;
   margin: auto;
   background-image: url("../images/wood.png");
-  border: 2px solid black;
+  /*border: 2px solid black;*/
   box-shadow: 4px 4px 12px 0px rgba(0,0,0,0.50);
   position: relative;
   padding: 40px;
@@ -57,9 +55,17 @@ margin: auto;
 }
 
 
+table {
+  border: 1px solid black;
+  background-color: white;
+  box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.50);
+
+}
+
 .injectTable {
   opacity: 1;
   z-index: 1;
+  /*border: 1px solid black;*/
 }
 
 .cell {
@@ -71,19 +77,19 @@ margin: auto;
 
 .white {
   background-color: white;
-  transition: background-color 0.5s ease-in;
+  transition: background-color 0.2s ease-in;
 
 }
 
 .black {
   background-color: black;
-  transition: background-color 0.5s ease-in;
+  transition: background-color 0.2s ease-in;
 
 }
 
 .green {
   background-color: #5E9D6C;
-  transition: background-color 0.5s ease-in;
+  transition: background-color 0.2s ease-in;
 }
 
 tr {
@@ -150,7 +156,7 @@ td .pressed {
   border: 1px solid black;
   box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.50);
   /*float: right;*/
-  transition: background-color 0.25s ease-in-out 2s;
+  transition: background-color 0.22s ease-in-out 0.5s;
   margin: 40px auto;
 
 }
@@ -159,7 +165,8 @@ td .pressed {
 .playerBox {
   position: absolute;
   width: 10%;
-  top: 20%;
+  min-height: 70%;
+  top: 30%;
   left: 85%;
   background-color: white;
   padding: 5px;
@@ -171,9 +178,10 @@ td .pressed {
 .infobox {
   background-color: white;
   width: 10%;
+  min-height: 70%;
   padding: 5px;
   position: absolute;
-  top: 20%;
+  top: 30%;
   right: 85%;
   box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.50);
 }
@@ -181,7 +189,7 @@ td .pressed {
 
 .button-pressed {
   box-shadow: none;
-  transition-duration: 0.2s;
+  /*transition-duration: 0.2s;*/
 }
 
 .clearfix:after {
