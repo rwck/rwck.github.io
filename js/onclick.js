@@ -1,13 +1,27 @@
-
-
-
 function setClickers() {
+
   $("td").click(function() {
-    // CLICK();
-    var myID = this.id;
-    // alert(myID);
-    clickTestSquare(myID);
-  });
+    $("td").mousedown(function() {
+      var myID = this.id;
+      clickShadow(myID);
+      // CLICK();
+      var myID = this.id;
+      // alert(myID);
+      clickTestSquare(myID);
+
+    })
+  })
+};
+
+var delay = 250;
+
+function clickShadow(id) {
+  $("#" + id).toggleClass("button-pressed");
+  setTimeout(function() {
+    $("#" + id).toggleClass("button-pressed")
+  }, 250);
+  // setTimeout(function() {
+  //   $("#"+id).toggleClass("button-pressed")}, 250);
 }
 
 function clickTestSquare(id) {

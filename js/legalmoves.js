@@ -44,7 +44,6 @@ function updateRowArray(x, y, direction) {
   kabook = testColourOfNorth(x, y, direction);
 }
 
-
 function checkRowContents(x, y, direction, player) {
   var kabook = testColourOfNorth(x, y, direction);
   console.log("************** THIS IS KABOOOOOOOK" + kabook);
@@ -117,8 +116,12 @@ function checkRowContents(x, y, direction, player) {
     }
     if (testObject[myHash].directionOfTest.length > 1) {
       alert("More than one row can be flipped.");
-      var additionalRowsToFlip = _.initial(testObject[myHash].directionOfTest)
-      alert("The remaining row to flip is " + additionalRowsToFlip);
+      var additionalDirectionsToFlip = _.initial(testObject[myHash].directionOfTest)
+      alert("The remaining row to flip is " + additionalDirectionsToFlip);
+      // this is where it's broken.
+
+
+      
       for (var i = 0; i < additionalRowsToFlip.length; i++) {
         if (player === "white") {
           whiteToggle(additionalRowsToFlip[i]);

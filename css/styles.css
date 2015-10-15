@@ -1,8 +1,9 @@
 body {
-  width: 60%;
+  width: 80%;
   margin: auto;
   /*background-color: black;*/
   font-family: monospace;
+  background-color: gray;
 }
 
 h1 {
@@ -10,23 +11,44 @@ h1 {
   color: black;
 }
 
+
+.board {
+  width: 60vw;
+  margin: auto;
+  background-image: url("../images/wood.png");
+  border: 2px solid black;
+
+}
+
+
+.injectTable {
+  opacity: 1;
+  z-index: 1;
+}
+
 .cell {
   opacity: 0;
   cursor: default;
+
+
 }
 
 .white {
   background-color: white;
+  transition: background-color 0.5s ease-in;
+
 }
 
 .black {
   background-color: black;
+  transition: background-color 0.5s ease-in;
+
 }
 
 .green {
   background-color: green;
+  transition: background-color 0.5s ease-in;
 }
-
 
 tr {
   min-height: 40px;
@@ -46,6 +68,7 @@ td {
   margin: 10px;
   /*border: 1px solid #979797;*/
   box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.50);
+
 }
 
 table {
@@ -56,7 +79,6 @@ table {
 
 
 td .pressed {
-  box-shadow: none;
 }
 
 .greenBox {
@@ -90,5 +112,15 @@ td .pressed {
   width: 50px;
   height:50px;
   border: 1px solid black;
+  box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.50);
+  float: right;
+
+
+
   /*transition: background-color 1s ease-in-out 2s;  */
+}
+
+.button-pressed {
+  box-shadow: none;
+  transition-duration: 0.2s;
 }
