@@ -3,7 +3,7 @@ function setClickers() {
   $("td").click(function() {
     $("td").mousedown(function() {
       var myID = this.id;
-      clickShadow(myID);
+      // clickShadow(myID);
       // CLICK();
       var myID = this.id;
       // alert(myID);
@@ -86,7 +86,7 @@ function clickTestSquare(id) {
       // alert("That is a valid move!!!" + id);
       valid = true;
     } else {
-      alert("That is not a valid move" + id);
+      // alert("That is not a valid move" + id);
     }
   }
   if (player === "white") {
@@ -94,7 +94,7 @@ function clickTestSquare(id) {
       // alert("That is a valid move!!!" + id);
       valid = true;
     } else {
-      alert("That is not a valid move" + id);
+      // alert("That is not a valid move" + id);
     }
   }
   if (valid) {
