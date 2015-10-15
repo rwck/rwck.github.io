@@ -18,15 +18,10 @@ function setClickers() {
 }
 
 // if (clickTestSquare(myID)) {
-  // CLICK(myID);
+// CLICK(myID);
 
 
 
-function dood(id) {
-  var x = parseInt(testObject[id]["x"]);// [x];
-  var y = parseInt(testObject[id]["y"]);
-
-}
 
 
 //
@@ -39,14 +34,68 @@ function dood(id) {
 function clickTestSquare(id) {
   var x = parseInt(testObject[id]["x"]);
   var y = parseInt(testObject[id]["y"]);
-  testColourOfNorth(x, y, north);
-  testColourOfNorth(x, y, south);
-  testColourOfNorth(x, y, east);
-  testColourOfNorth(x, y, west);
-  testColourOfNorth(x, y, northeast);
-  testColourOfNorth(x, y, northwest);
-  testColourOfNorth(x, y, southeast);
-  testColourOfNorth(x, y, southwest);
+  alert("Player is " + player);
+  try {
+    checkRowContents(x, y, north, player)
+  } catch (error) {
+    console.log(error);
+  }
+  try {
+    checkRowContents(x, y, south, player)
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+    checkRowContents(x, y, east, player)
+
+  } catch (error) {
+    console.log(error);
+  }
+  try {
+    checkRowContents(x, y, west, player)
+
+  } catch (error) {
+    console.log(error);
+  }
+  try {
+    checkRowContents(x, y, northeast, player)
+
+  } catch (error) {
+    console.log(error);
+  }
+  try {
+    checkRowContents(x, y, northwest, player)
+
+  } catch (error) {
+    console.log(error);
+  }
+  try {
+    checkRowContents(x, y, southeast, player)
+
+  } catch (error) {
+    console.log(error);
+  }
+  try {
+    checkRowContents(x, y, southwest, player)
+  } catch (error) {
+    console.log(error);
+  }
+
+  if (player === "black") {
+    if (testObject[id].legalForBlack === true) {
+      alert("That is a valid move!!!" + id);
+    } else {
+      alert("That is not a valid move" + id);
+    }
+    if (player === "white") {
+      if (testObject[id].legalForWhite === true) {
+        alert("That is a valid move!!!" + id);
+      } else {
+        alert("That is not a valid move" + id);
+      }
+    }
+  }
 }
 
 
@@ -55,7 +104,7 @@ function clickTestSquare(id) {
 
 
 // _.each(arrayOfDirections, function(direction) {
-  // testColourOfNorth(x, y, direction)
+// testColourOfNorth(x, y, direction)
 
 
 function CLICK(myID) {
@@ -111,17 +160,17 @@ function playerToggle() {
     whoseTurn = playerWhite;
     $(".currentPlayerIndicator").css('background-color', 'white');
   } else if (whoseTurn === playerWhite) {
-      whoseTurn = playerBlack;
-      $(".currentPlayerIndicator").css('background-color', 'black');
+    whoseTurn = playerBlack;
+    $(".currentPlayerIndicator").css('background-color', 'black');
   }
   return whoseTurn;
 }
 
-function whereAmI(ID) {
-  var myID = ID
-  var myCoords = [testObject[ID].x, testObject[ID].y];
-  alert(myCoords);
-}
+// function whereAmI(ID) {
+//   var myID = ID
+//   var myCoords = [testObject[ID].x, testObject[ID].y];
+//   alert(myCoords);
+// }
 //
 // console.log(whoseTurn);
 // console.log(playerBlack);

@@ -8,15 +8,17 @@ function basicPlayingSquare(x, y, z) {
   this.x_coordinate = x;
   this.y_coordinate = y;
   this.colour = "green";
-  this.permittedMove = false;
   this.locked = false;
   this.borderPiece = false;
   this.javaScript = `<script>$.click(alert("You're clicking on a cell"))</script>`;
   this.newRow = "";
   this.endOfRow = "";
+  this.legalForBlack = false;
+  this.legalForWhite = false;
   if (parseInt(this.x) + 1 === Math.sqrt(this.square)) {
     this.endOfRow += `</tr>`;
   };
+  this.directionOfTest = "";
   this.valueX = parseInt(this.x) + 1;
   this.testV = Math.sqrt(this.square);
   if (parseInt(this.x) === 0) {
