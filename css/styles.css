@@ -1,9 +1,13 @@
+* {
+  box-sizing: border-box;
+  border: 1px dotted red;
+}
 body {
   width: 80%;
   margin: auto;
   /*background-color: black;*/
   font-family: monospace;
-  background-color: gray;
+  background-color: hsla(0, 0%, 54%, 0.5);
 }
 
 h1 {
@@ -17,6 +21,9 @@ h1 {
   margin: auto;
   background-image: url("../images/wood.png");
   border: 2px solid black;
+  box-shadow: 4px 4px 12px 0px rgba(0,0,0,0.50);
+  position: relative;
+
 
 }
 
@@ -113,12 +120,25 @@ td .pressed {
   height:50px;
   border: 1px solid black;
   box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.50);
-  float: right;
-
-
-
-  /*transition: background-color 1s ease-in-out 2s;  */
+  /*float: right;*/
+  transition: background-color 0.25s ease-in-out 2s;  */
+  
 }
+
+
+.playerBox {
+  position: absolute;
+  top: 15vw;
+  left: 85vw;
+}
+
+.infobox {
+  position: absolute;
+  top: 15vw;
+  right: 85vw;
+}
+
+
 
 .button-pressed {
   box-shadow: none;
