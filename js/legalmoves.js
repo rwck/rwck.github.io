@@ -1,5 +1,5 @@
 var kabook;
-var player = "black";
+var player;
 
 function testwhiteToggle() {
   whiteToggle(cellAt(6, 1));
@@ -43,14 +43,11 @@ function testwhiteToggle() {
 function updateRowArray(x, y, direction) {
   kabook = testColourOfNorth(x, y, direction);
 }
-//
-// x: 0
-// y: 0
-// direction:
-// player:
+
 
 function checkRowContents(x, y, direction, player) {
   var kabook = testColourOfNorth(x, y, direction);
+  console.log("************** THIS IS KABOOOOOOOK" + kabook);
   if (player === "black") {
     var opposite = "white";
   } else if (player === "white") {
@@ -84,12 +81,14 @@ function checkRowContents(x, y, direction, player) {
   var nextPlayerCell = _.indexOf(_.unzip(kabook.IDS)[1], player);
   console.log(kabook);
   var arrayofThisRow = _.unzip(kabook.IDS)[1];
+  var arrayofThisRowHashes = _.unzip(kabook.IDS)[0];
   console.log("This row is " + arrayofThisRow);
   var clippedArray = _.initial(arrayofThisRow, arrayofThisRow.length - nextPlayerCell);
+  var clippedArrayOfHashes = _.initial(arrayofThisRowHashes, arrayofThisRowHashes.length - nextPlayerCell);
   console.log("Clipped array is " + clippedArray);
 
-
   var arrayForChecking = _.rest(clippedArray);
+  var arrayForFlipping = _.rest(clippedArrayOfHashes);
   console.log("Array for checking is " + arrayForChecking);
 
   console.log("Next player cell is:" + nextPlayerCell);
@@ -117,15 +116,15 @@ function checkRowContents(x, y, direction, player) {
       testObject[myHash].directionOfTest = direction;
     }
   }
+  hashesToFlip = arrayForFlipping;
 }
 
 function mini() {
   testwhiteToggle();
   checkRowContents(2, 5, northeast, "black");
-  // checkRowContents(1, 5, northeast, "black");
-  // checkRowContents(0, 0, northeast);
+
   kabook;
-  // messages();
+
 }
 
 
