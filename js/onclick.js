@@ -5,7 +5,7 @@ function setClickers() {
   $("td").click(function() {
     // CLICK();
     var myID = this.id;
-    alert(myID);
+    // alert(myID);
     clickTestSquare(myID);
   });
 }
@@ -19,7 +19,7 @@ function clickTestSquare(id) {
   var x = parseInt(testObject[id]["x"]);
   var y = parseInt(testObject[id]["y"]);
   var valid = false;
-  alert("Player is " + player);
+  // alert("Player is " + player);
   try {
     checkRowContents(x, y, north, player)
   } catch (error) {
@@ -69,7 +69,7 @@ function clickTestSquare(id) {
 
   if (player === "black") {
     if (testObject[id].legalForBlack === true) {
-      alert("That is a valid move!!!" + id);
+      // alert("That is a valid move!!!" + id);
       valid = true;
     } else {
       alert("That is not a valid move" + id);
@@ -77,7 +77,7 @@ function clickTestSquare(id) {
   }
   if (player === "white") {
     if (testObject[id].legalForWhite === true) {
-      alert("That is a valid move!!!" + id);
+      // alert("That is a valid move!!!" + id);
       valid = true;
     } else {
       alert("That is not a valid move" + id);
@@ -98,16 +98,16 @@ function clickTestSquare(id) {
         whiteToggle(id);
       }
     }
-    alert(player);
+    // alert(player);
 
 
     player = opposite;
-    alert(player);
+    // alert(player);
     setCurrentPlayerCell();
 
 
   } else {
-    alert('spidoooooom');
+    // alert('spidoooooom');
 
   }
 }

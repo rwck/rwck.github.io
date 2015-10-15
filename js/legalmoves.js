@@ -108,12 +108,25 @@ function checkRowContents(x, y, direction, player) {
     console.log("My hash at this point is " + myHash);
     if (player === "black") {
       testObject[myHash].legalForBlack = true;
-      testObject[myHash].directionOfTest = direction;
+      testObject[myHash].directionOfTest.push(_.findKey(directionsObject, direction));
       console.log("Setting object " + myHash + "to true for black");
     }
     if (player === "white") {
       testObject[myHash].legalForWhite = true;
-      testObject[myHash].directionOfTest = direction;
+      testObject[myHash].directionOfTest.push(_.findKey(directionsObject, direction));
+    }
+    if (testObject[myHash].directionOfTest.length > 1) {
+      alert("More than one row can be flipped.");
+      var additionalRowsToFlip = _.initial(testObject[myHash].directionOfTest)
+      alert("The remaining row to flip is " + additionalRowsToFlip);
+      for (var i = 0; i < additionalRowsToFlip.length; i++) {
+        if player === "white" {
+          whiteToggle(additionalRowsToFlip[i]);
+        }
+        if player === "black" {
+          blackToggle(additionalRowsToFlip[i]);
+        }
+      }
     }
   }
   hashesToFlip = arrayForFlipping;

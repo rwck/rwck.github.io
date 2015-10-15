@@ -30,6 +30,22 @@ var northeast = [1, -1]
 var southwest = [-1, 1]
 var southeast = [1, 1]
 
+
+var directionsObject = {
+  north : [0, -1],
+  south : [0, 1],
+  east : [1, 0],
+  west : [-1, 0],
+  northwest : [-1, -1],
+  northeast : [1, -1],
+  southwest : [-1, 1],
+  southeast : [1, 1],
+}
+
+
+
+
+
 var stringOfDirections = "north south east west northwest northeast southwest southeast"
 var arrayOfDirections = stringOfDirections.split(" ");
 
