@@ -120,10 +120,10 @@ function checkRowContents(x, y, direction, player) {
       var additionalRowsToFlip = _.initial(testObject[myHash].directionOfTest)
       alert("The remaining row to flip is " + additionalRowsToFlip);
       for (var i = 0; i < additionalRowsToFlip.length; i++) {
-        if player === "white" {
+        if (player === "white") {
           whiteToggle(additionalRowsToFlip[i]);
         }
-        if player === "black" {
+        if (player === "black") {
           blackToggle(additionalRowsToFlip[i]);
         }
       }
