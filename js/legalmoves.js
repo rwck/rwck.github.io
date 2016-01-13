@@ -115,13 +115,13 @@ function checkRowContents(x, y, direction, player) {
       testObject[myHash].directionOfTest.push(_.findKey(directionsObject, direction));
     }
     if (testObject[myHash].directionOfTest.length > 1) {
-      alert("More than one row can be flipped.");
+      // alert("More than one row can be flipped.");
       var additionalDirectionsToFlip = _.initial(testObject[myHash].directionOfTest)
-      alert("The remaining row to flip is " + additionalDirectionsToFlip);
+      // alert("The remaining row to flip is " + additionalDirectionsToFlip);
       // this is where it's broken.
 
 
-      
+
       for (var i = 0; i < additionalRowsToFlip.length; i++) {
         if (player === "white") {
           whiteToggle(additionalRowsToFlip[i]);

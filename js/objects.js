@@ -10,7 +10,7 @@ function basicPlayingSquare(x, y, z) {
   this.colour = "green";
   this.locked = false;
   this.borderPiece = false;
-  this.javaScript = `<script>$.click(alert("You're clicking on a cell"))</script>`;
+  this.javaScript = `<script>$.click(// alert("You're clicking on a cell"))</script>`;
   this.newRow = "";
   this.endOfRow = "";
   this.legalForBlack = false;
